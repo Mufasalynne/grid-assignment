@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  padding: 2rem;
+}
+
+.maingrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Shared card styling */
+.card {
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Profile image + name block */
+.information {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.information img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.information h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.information span {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* Specific Card Layouts */
+.daniel {
+  background-color: hsl(263, 55%, 52%);
+  background-image: url('images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: top right 2rem;
+  grid-area: daniel;
+}
+
+.jonathan {
+  background-color: hsl(217, 19%, 35%);
+  grid-area: jonathan;
+}
+
+.jeanette {
+  background-color: white;
+  color: hsl(217, 19%, 35%);
+  grid-area: jeanette;
+}
+
+.patrick {
+  background-color: hsl(219, 29%, 14%);
+  grid-area: patrick;
+}
+
+.kira {
+  background-color: white;
+  color: hsl(217, 19%, 35%);
+  grid-area: kira;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .maingrid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "daniel"
+      "jonathan"
+      "jeanette"
+      "patrick"
+      "kira";
+  }
+}
